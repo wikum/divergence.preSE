@@ -27,9 +27,9 @@ computeSingleFeaturesetSupport = function(Mat, features, gamma, beta, distance, 
   sel = which(xjn <= quantile(xjn, beta))
 
   Radius = xjn[sel]
-  Centermatrix = Mat[, sel]
-  Mat_Dist_m2c = Mat_Dist[, sel]
-
+  Centermatrix = Mat[, sel, drop=FALSE]
+  Mat_Dist_m2c = Mat_Dist[, sel, drop=FALSE]
+  
   ### compare with radius
 
   v = apply(Mat_Dist_m2c,1, function(y){
